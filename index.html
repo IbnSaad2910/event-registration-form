@@ -1,130 +1,107 @@
-<!DOCTYPE html>
-<html lang="en" >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Event Registration Form</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-<link rel="stylesheet" href="./style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- Import Google Icon Font -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+	<title>Survey Form</title>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div id="main">
-  
-  <!-- Banner for the background -->
-  <div id="banner"></div>
-  
-  <!-- Content of the form -->
-  <div class="content">
-    <form id="survey-form">
-        
-      <!-- Purple banner at the top of the form -->
-        <div id="form-banner"></div>
-        <div id="form-content">
-          
-          <!-- Start of header -->
-          <h1 id="title">IT Tech Day Registration</h1>
-          <p id="description">Great news for all students! 📖 In ONE DAY, we have 3 WORKSHOPS lead by experienced speakers 👨‍🏫 Simply choose one of these workshops you're interested to join.</p>
-          <!-- End of header -->
-          
-          <!-- Start of Name label & input -->
-          <div class="items">
-            <div class="labels">
-              <label id="name-label" for="name">Name <span class="red-star">*</span></label>
-              <div class="input-field">
-                <input class="input" autofocus type="text" name="name" id="name" required placeholder="Enter your name">
-                </input>
-                <div class="underline"></div>
-              </div>
-            </div>
-          </div>
-      <!-- End of Name label & input -->
-      
-      <!-- Start of Email label & input -->
-          <div class="items">
-            <div class="labels">
-              <label id="email-label" for="email">Email <span class="red-star">*</span></label>
-              <div class="input-field">
-                <input class="input" type="email" name="email" id="email" required placeholder="Enter your Email">
-                </input>
-                <div class="underline"></div>
-              </div>
-            </div>
-          </div>
-    <!-- End of Email label & input -->
-    
-    <!-- Start of Age label & input -->
-          <div class="items">
-            <div class="labels">
-              <label id="number-label" for="age">Age <span class="red-star">*</span></label>
-              <div class="input-field">
-                <input class="input" type="number" name="age" id="number" min="1" max="100" placeholder="Enter your age">
-                </input>
-                <div class="underline"></div>
-              </div>
-            </div>
-          </div>
-  <!-- End of Name label & input -->
-          
-  <!-- Start of Dropdown label & input -->
-          <div class="items">
-            <div class="labels">
-              <label for="currentPos">Which option best describes your current program?</label><br>
-                <select name="currentPos" id="dropdown">
-                  <option disabled value>Select an option</option>
-                  <option value="foundation">Foundation Student</option>
-                  <option value="degree">Degree Student</option>
-                  <option value="postgraduate">Postgraduate Student</option>
-                </select>
-            </div>
-          </div>
-  <!-- End of Dropdown label & input -->
-  
-  <!-- Start of Radio button label & input -->
-          <div class="items">
-            <div class="labels">
-              <label  for="workshop">Choose the workshop you wish to attend <span class="red-star">*</span></label>
-              <div id="workshop" class="display-inline">
-                <ul style="list-style: none;">
-                  <li class="radio"><input name="radio-buttons" value="1" type="radio" class="workshop-choice"><label>Laravel web development</label></li>
-                  <li class="radio"><input name="radio-buttons" value="2" type="radio" class="workshop-choice"><label>Mobile application development</label></li>
-                  <li class="radio"><input name="radio-buttons" value="3" type="radio" class="workshop-choice"><label>Arduino</label></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-  <!-- End of Radio button label & input -->
-  
-  <!-- Start of Checkbox label & input -->
-          <div class="items">
-              <div class="labels">
-                <label  for="diet">Food diet or allergy (Check all that apply):</label>
-                <div class="display-inline">
-                  <ul id="diet" style="list-style: none;">
-                    <li class="checkbox"><input name="diet" value="1" type="checkbox" class="diet-choice"><label>Vegetarian</label></li>
-                    <li class="checkbox"><input name="diet" value="2" type="checkbox" class="diet-choice"><label>Vegan</label></li>
-                    <li class="checkbox"><input name="diet" value="3" type="checkbox" class="diet-choice"><label>Nuts</label></li>
-                  </ul>
-                </div>
-              </div>
-          </div>
-  <!-- End of Checkbox label & input -->
-          <div class="items">
-            <div class="labels">
-              <label for="comment">Any suggestions for the upcoming IT Tech Day events?</label>
-              <div class="input-field">
-                <textarea  name="suggestions" style="width: 75%; resize: vertical; border-radius: 5px; padding: 5px;" id="comments" placeholder="Enter your suggestions here..."></textarea>
-            </div>
-          </div>
-  <!-- End of Dropdown label & input -->
-        </div>
-        <div style="text-align: center;">
-            <button id="submit" type="submit">Submit</button>
-        </div>
-    </form>
-  </div>
-</div>
-<!-- partial -->
-  
+	<div class="container">
+		<div class="row">
+			<div class="col s12 m6 offset-m3">
+				<div class="card">
+					<div class="card-action">
+						<h4 id="title">IT Tech Day Registration</h4>
+						<p>Great news for all students! 📖 In ONE DAY, we have 3 WORKSHOPS lead by experienced speakers 👨‍🏫 Simply choose one of these workshops you're interested to join.</p>
+					</div>
+					<div class="card-content">
+						<div class="input-field">
+							<i class="material-icons prefix deep-purple-text">account_circle</i>
+							<input type="text" name="name" id="name" required>
+							<label for="name">Enter your name</label>
+						</div>
+						<div class="input-field">
+							<i class="material-icons prefix deep-purple-text">cake</i>
+							<input type="text" name="age" id="age" min="1" max="100" required>
+							<label for="age">Enter your age</label>
+						</div>
+						<div class="input-field">
+							<i class="material-icons prefix deep-purple-text">email</i>
+							<input type="email" id="email" class="validate" required>
+							<label for="email">Enter your email</label>
+							<span class="helper-text" data-error="Invalid email address"></span>
+						</div>
+						<div class="input-field">
+							<select id="dropdown">
+								<option value="" disabled="disabled" selected="selected">Choose your option</option>
+								<option value="1">Foundation</option>
+								<option value="2">Diploma</option>
+								<option value="3">Postgraduate</option>
+							</select>
+							<label>Which option best describes your current program?</label>
+						</div>
+						<div class="input-field">
+							<p>Choose the workshop you wish to attend</p>
+							<p>
+								<label>
+									<input class="with-gap" type="radio" name="radio-buttons" value="1">
+									<span>Laravel web development</span>
+								</label>
+							</p>
+							<p>
+								<label>
+									<input class="with-gap" type="radio" name="radio-buttons" value="2">
+									<span>Mobile application development</span>
+								</label>
+							</p>
+							<p>
+								<label>
+									<input class="with-gap" type="radio" name="radio-buttons" value="3">
+									<span>Arduino</span>
+								</label>
+							</p>
+						</div>
+						<div class="input-field">
+							<p>Food diet or allergy (Check all that apply):</p>
+							<p>
+								<label>
+									<input type="checkbox">
+									<span>Vegetarian</span>
+								</label>
+							</p>
+							<p>
+								<label>
+									<input type="checkbox">
+									<span>Vegan</span>
+								</label>
+							</p>
+							<p>
+								<label>
+									<input type="checkbox">
+									<span>Nuts</span>
+								</label>
+							</p>
+						</div>
+						<div class="input-field">
+							<i class="material-icons prefix deep-purple-text">mode_edit</i>
+							<textarea name="suggestions" id="comments" class="materialize-textarea"></textarea>
+							<label for="comments">Enter your suggestions here...</label>
+						</div>
+						<div class="input-field center">
+							<button class="btn deep-purple">Submit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
